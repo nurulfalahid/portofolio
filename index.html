@@ -1,627 +1,299 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nurul Falah CV & Portofolio</title>
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#f5f3ff',
-              100: '#ede9fe',
-              500: '#6366f1', /* Indigo */
-              600: '#4f46e5',
-              700: '#4338ca',
-              accent: '#a855f7', /* Purple/Violet */
-              darkBg: '#09090b', /* Dark zinc */
-              cardBg: '#18181b',
-            }
-          },
-          fontFamily: {
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Google Fonts & FontAwesome Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <style>
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #09090b;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurul Falah | Digital Marketing Expert & AI Content Creator</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    /* Efek Glow Halus di Background */
-    .glow-sphere {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(120px);
-      opacity: 0.15;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    /* Efek Melayang/Floating */
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    .hover-float:hover {
-      animation: float 3s ease-in-out infinite;
-    }
-
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #09090b;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #27272a;
-      border-radius: 999px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #3f3f46;
-    }
-
-    /* PRINT STYLING (Penting untuk fitur Cetak/Download CV) */
-    @media print {
-      body {
-        background: white !important;
-        color: black !important;
-      }
-      .no-print, header, footer, #contact, #portfolio-filters, .btn-action {
-        display: none !important;
-      }
-      .print-full-width {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 !important;
-        margin: 0 !important;
-      }
-      .page-break {
-        page-break-before: always;
-      }
-      .card-print {
-        border: 1px solid #e4e4e7 !important;
-        background: white !important;
-        color: black !important;
-        box-shadow: none !important;
-      }
-      .text-gradient {
-        background: none !important;
-        -webkit-text-fill-color: black !important;
-        color: black !important;
-      }
-    }
-  </style>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f19;
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        @media print {
+            body { background: white; color: black; }
+            .no-print, header, footer, #contact, .filter-btn { display: none !important; }
+            .glass-card { border: none; background: transparent; backdrop-filter: none; padding: 0 !important; margin-bottom: 1.5rem !important; }
+            .text-gradient { -webkit-text-fill-color: currentcolor; background: none; color: #4f46e5; font-weight: bold; }
+            #portfolio, #experience { page-break-before: always; }
+        }
+    </style>
 </head>
-<body class="text-zinc-100 overflow-x-hidden relative min-h-screen">
+<body class="text-gray-200 min-h-screen selection:bg-indigo-500 selection:text-white">
 
-  <!-- ORNAMEN BACKGROUND GLOW -->
-  <div class="glow-sphere w-[400px] h-[400px] bg-brand-500 top-[-100px] left-[-100px]"></div>
-  <div class="glow-sphere w-[500px] h-[500px] bg-brand-accent bottom-[10%] right-[-150px]"></div>
-
-  <header class="no-print fixed top-0 left-0 w-full z-50 border-b border-zinc-800/50 bg-zinc-950/70 backdrop-blur-md">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#" class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
-        <span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-500 to-brand-accent flex items-center justify-center text-sm">N</span>
-        <span>Nama<span class="text-brand-500">Anda.</span></span>
-      </a>
-
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
-        <a href="#about" class="hover:text-white transition-colors">Tentang</a>
-        <a href="#experience" class="hover:text-white transition-colors">Resume</a>
-        <a href="#portfolio" class="hover:text-white transition-colors">Portofolio</a>
-        <a href="#skills" class="hover:text-white transition-colors">Keahlian</a>
-        <a href="#contact" class="hover:text-white transition-colors">Hubungi</a>
-      </nav>
-
-      <!-- Action Buttons -->
-      <div class="flex items-center gap-4">
-        <button onclick="window.print()" class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-sm font-semibold transition-all">
-          <i class="fa-solid fa-download"></i> Cetak/Unduh CV
-        </button>
-        <!-- Mobile Menu Toggle Button -->
-        <button id="mobile-menu-btn" class="md:hidden text-xl text-zinc-400 hover:text-white focus:outline-none">
-          <i class="fa-solid fa-bars-staggered"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Nav Dropdown -->
-    <div id="mobile-menu" class="hidden md:hidden border-b border-zinc-800 bg-zinc-950 px-6 py-4 flex flex-col gap-4 text-zinc-400 font-medium">
-      <a href="#about" onclick="toggleMenu()" class="hover:text-white">Tentang</a>
-      <a href="#experience" onclick="toggleMenu()" class="hover:text-white">Resume</a>
-      <a href="#portfolio" onclick="toggleMenu()" class="hover:text-white">Portofolio</a>
-      <a href="#skills" onclick="toggleMenu()" class="hover:text-white">Keahlian</a>
-      <a href="#contact" onclick="toggleMenu()" class="hover:text-white">Hubungi</a>
-      <button onclick="window.print(); toggleMenu()" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm">
-        <i class="fa-solid fa-download"></i> Cetak/Unduh CV
-      </button>
-    </div>
-  </header>
-
-  <main class="max-w-6xl mx-auto px-6 pt-24 pb-12 print-full-width">
-
-    <section id="about" class="py-16 md:py-24 flex flex-col-reverse md:flex-row items-center gap-12 border-b border-zinc-800/60">
-      <div class="flex-1 space-y-6 text-center md:text-left">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-500 text-xs font-semibold uppercase tracking-wider">
-          <span class="w-2 h-2 rounded-full bg-brand-500 animate-ping"></span> Terbuka untuk Freelance &amp; Kerja
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#0b0f19]/80 backdrop-blur-md border-b border-gray-800/60 no-print">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tight text-white">NF<span class="text-indigo-500">.</span></a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-400">
+                <a href="#about" class="hover:text-white transition">About</a>
+                <a href="#expertise" class="hover:text-white transition">Expertise</a>
+                <a href="#experience" class="hover:text-white transition">Experience</a>
+                <a href="#portfolio" class="hover:text-white transition">Portfolio</a>
+            </nav>
+            <button onclick="window.print()" class="text-xs font-semibold uppercase tracking-wider bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-lg border border-gray-700 transition flex items-center gap-2">
+                <i class="fa-solid fa-print"></i> Download CV
+            </button>
         </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-          Halo, Saya <span class="bg-gradient-to-r from-brand-500 via-purple-400 to-brand-accent bg-clip-text text-transparent text-gradient">Nama Lengkap</span>
-        </h1>
-        <h2 class="text-xl sm:text-2xl font-semibold text-zinc-300">
-          Saya seorang <span id="typing-text" class="text-brand-500 border-r-2 border-brand-500 pr-1 font-mono"></span>
-        </h2>
-        <p class="text-zinc-400 text-base sm:text-lg leading-relaxed max-w-2xl">
-          Berpengalaman lebih dari 3 tahun dalam merancang antarmuka digital yang memukau dan menulis kode yang bersih serta efisien. Fokus membantu bisnis mengonversi visi mereka menjadi produk digital fungsional yang disukai pengguna.
-        </p>
+    </header>
 
-        <!-- CTAs -->
-        <div class="no-print flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-4">
-          <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-brand-accent hover:opacity-90 font-bold transition-all text-center flex items-center justify-center gap-2 shadow-lg shadow-brand-500/20">
-            <i class="fa-regular fa-paper-plane"></i> Hubungi Saya
-          </a>
-          <a href="#portfolio" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-zinc-800/80 hover:bg-zinc-700 hover:text-white font-bold transition-all text-center border border-zinc-700/50 flex items-center justify-center gap-2">
-            Lihat Karya <i class="fa-solid fa-arrow-right text-xs"></i>
-          </a>
+    <!-- HERO SECTION -->
+    <section class="pt-32 pb-20 px-6 max-w-6xl mx-auto min-h-[85vh] flex flex-col-reverse md:flex-row items-center justify-between gap-12" id="about">
+        <!-- Text Content -->
+        <div class="flex-1">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-medium mb-6 w-fit no-print">
+                <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span> Veteran Digital Marketer Since 2012
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
+                Hi, I am <span class="text-gradient">Nurul Falah</span>
+            </h1>
+            <h2 class="text-xl md:text-2xl font-medium text-gray-400 mb-6">
+                Digital Marketing Expert &amp; AI Content Creator
+            </h2>
+            <p class="text-gray-400 text-sm md:text-base max-w-xl mb-8 leading-relaxed">
+                A seasoned digital marketing practitioner with a proven track record of adapting across digital eras. From mastering SEO in 2012 to dominating modern Paid Traffic and Web Design, I now lead the forefront of digital innovation as an AI Content Creator.
+            </p>
+            <div class="flex flex-wrap gap-4 no-print">
+                <a href="https://wa.me/628993643243" target="_blank" class="btn-gradient text-white px-5 py-3 rounded-xl font-medium text-sm shadow-lg shadow-indigo-500/20 hover:opacity-90 transition flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i> Let's Talk
+                </a>
+                <a href="#expertise" class="bg-gray-800 hover:bg-gray-700 text-white px-5 py-3 rounded-xl font-medium text-sm border border-gray-700 transition flex items-center gap-2">
+                    View My Expertise <i class="fa-solid fa-arrow-down text-xs"></i>
+                </a>
+            </div>
         </div>
 
-        <!-- Social Media Shortcuts -->
-        <div class="no-print flex items-center justify-center md:justify-start gap-5 pt-4 text-xl text-zinc-400">
-          <a href="https://linkedin.com" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://github.com" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-github"></i></a>
-          <a href="https://dribbble.com" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-dribbble"></i></a>
-          <a href="https://instagram.com" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+        <!-- Photo Section -->
+        <div class="flex-shrink-0 relative w-64 h-64 md:w-80 md:h-80 group">
+            <div class="absolute inset-0 bg-gradient-to-tr from-indigo-500 to-purple-500 rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition duration-500"></div>
+            <div class="w-full h-full rounded-3xl overflow-hidden border border-gray-700/60 relative z-10 glass-card p-2 bg-[#0b0f19]">
+                <div class="relative w-full h-full rounded-2xl overflow-hidden">
+                    <!-- REPLACE THIS WITH YOUR PHOTO LINK FROM BANANA AI / POSTIMAGES -->
+                    <img src="REPLACE_WITH_YOUR_PHOTO_LINK_HERE" alt="Nurul Falah" class="w-full h-full object-cover">
+                </div>
+            </div>
         </div>
-      </div>
-
-      <!-- Avatar with glowing border -->
-      <div class="w-64 h-64 sm:w-80 sm:h-80 flex-shrink-0 relative">
-        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-brand-500 to-brand-accent opacity-30 blur-xl animate-pulse"></div>
-        <div class="w-full h-full rounded-full p-1 bg-gradient-to-tr from-brand-500 to-brand-accent overflow-hidden relative z-10">
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80" alt="Profile Picture" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/400x400/18181b/ffffff?text=Photo'">
-        </div>
-      </div>
     </section>
 
-    <section class="py-12 grid grid-cols-2 lg:grid-cols-4 gap-6 border-b border-zinc-800/60 print-full-width">
-      <div class="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 text-center card-print">
-        <div class="text-3xl sm:text-4xl font-extrabold text-brand-500">3+</div>
-        <div class="text-zinc-400 text-sm mt-1 font-medium">Tahun Pengalaman</div>
-      </div>
-      <div class="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 text-center card-print">
-        <div class="text-3xl sm:text-4xl font-extrabold text-white text-gradient">50+</div>
-        <div class="text-zinc-400 text-sm mt-1 font-medium">Proyek Selesai</div>
-      </div>
-      <div class="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 text-center card-print">
-        <div class="text-3xl sm:text-4xl font-extrabold text-brand-accent">20+</div>
-        <div class="text-zinc-400 text-sm mt-1 font-medium">Klien Global</div>
-      </div>
-      <div class="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/60 text-center card-print">
-        <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400">99%</div>
-        <div class="text-zinc-400 text-sm mt-1 font-medium">Tingkat Kepuasan</div>
-      </div>
-    </section>
-
-    <section id="experience" class="py-16 border-b border-zinc-800/60 print-full-width">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-12">
-        <div>
-          <p class="text-sm font-semibold text-brand-500 uppercase tracking-widest">Pengalaman &amp; Edukasi</p>
-          <h2 class="text-3xl font-extrabold tracking-tight mt-1 text-white text-gradient">Latar Belakang Karir</h2>
+    <!-- CORE EXPERTISE SECTION (5 Focus Areas) -->
+    <section class="py-20 px-6 max-w-6xl mx-auto border-t border-gray-800/40" id="expertise">
+        <div class="mb-12 text-center md:text-left">
+            <p class="text-xs font-bold uppercase tracking-widest text-indigo-500 mb-2">Specialization</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-white">Core Competencies</h2>
         </div>
-        <button onclick="window.print()" class="no-print self-start md:self-auto px-5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 hover:bg-zinc-800 text-sm font-semibold transition-all flex items-center gap-2">
-          <i class="fa-solid fa-file-pdf"></i> Dapatkan Versi PDF
-        </button>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-12">
         
-        <!-- Kolom Pengalaman Kerja -->
-        <div class="space-y-8 relative before:absolute before:left-[19px] before:top-2 before:bottom-2 before:w-[2px] before:bg-zinc-800">
-          <h3 class="text-xl font-bold mb-6 flex items-center gap-3 pl-2">
-            <span class="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center text-sm"><i class="fa-solid fa-briefcase"></i></span>
-            Pengalaman Profesional
-          </h3>
-
-          <!-- Item 1 -->
-          <div class="relative pl-12 group">
-            <div class="absolute left-4 top-1.5 w-3.5 h-3.5 rounded-full bg-brand-500 ring-4 ring-brand-500/20 group-hover:bg-brand-accent transition-colors z-10"></div>
-            <div class="p-6 rounded-2xl bg-zinc-900/30 border border-zinc-800/60 hover:border-zinc-700/80 transition-all card-print">
-              <span class="text-xs font-semibold text-brand-500">2024 - Sekarang</span>
-              <h4 class="text-lg font-bold text-white mt-1">Lead UI/UX Designer</h4>
-              <p class="text-sm font-medium text-zinc-400">Tech Corporation Int.</p>
-              <p class="text-zinc-500 text-sm mt-3 leading-relaxed">
-                Memimpin tim desain berisi 5 orang untuk merancang aplikasi SaaS B2B. Meningkatkan rasio retensi pengguna hingga 24% melalui perombakan struktur navigasi.
-              </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Skill 1: Web Design -->
+            <div class="glass-card p-6 rounded-2xl border-t-4 border-t-blue-500">
+                <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl mb-4">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">Web Design</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">Crafting responsive, aesthetically pleasing, and user-centric websites specifically optimized for high conversion rates and seamless user experience.</p>
             </div>
-          </div>
 
-          <!-- Item 2 -->
-          <div class="relative pl-12 group">
-            <div class="absolute left-4 top-1.5 w-3.5 h-3.5 rounded-full bg-zinc-700 ring-4 ring-zinc-700/20 group-hover:bg-brand-500 transition-colors z-10"></div>
-            <div class="p-6 rounded-2xl bg-zinc-900/30 border border-zinc-800/60 hover:border-zinc-700/80 transition-all card-print">
-              <span class="text-xs font-semibold text-zinc-500">2022 - 2024</span>
-              <h4 class="text-lg font-bold text-white mt-1">Front-end Developer &amp; Designer</h4>
-              <p class="text-sm font-medium text-zinc-400">Inovasi Digital Studio</p>
-              <p class="text-zinc-500 text-sm mt-3 leading-relaxed">
-                Membangun 15+ website klien yang responsif menggunakan HTML, Tailwind CSS, dan ReactJS. Berkolaborasi erat dengan tim pemasaran untuk optimasi SEO.
-              </p>
+            <!-- Skill 2: Paid Ads -->
+            <div class="glass-card p-6 rounded-2xl border-t-4 border-t-indigo-500">
+                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 text-xl mb-4">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">Paid Advertising</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">Scaling businesses efficiently by managing and executing high-ROAS campaigns across META (Facebook/IG), TikTok Ads, and Google Ads.</p>
             </div>
-          </div>
+
+            <!-- Skill 3: Social Media -->
+            <div class="glass-card p-6 rounded-2xl border-t-4 border-t-pink-500">
+                <div class="w-12 h-12 rounded-xl bg-pink-500/10 flex items-center justify-center text-pink-400 text-xl mb-4">
+                    <i class="fa-solid fa-hashtag"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">Social Media Optimization</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">Developing organic strategies to build strong brand awareness, community engagement, and viral reach across modern social platforms.</p>
+            </div>
+
+            <!-- Skill 4: Marketplace -->
+            <div class="glass-card p-6 rounded-2xl border-t-4 border-t-orange-500 lg:col-start-1 lg:ml-12">
+                <div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-400 text-xl mb-4">
+                    <i class="fa-solid fa-store"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">Marketplace Optimization</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">Dominating e-commerce platforms through deep algorithm understanding, marketplace SEO, and strategic promotion to skyrocket product sales.</p>
+            </div>
+
+            <!-- Skill 5: AI Creator -->
+            <div class="glass-card p-6 rounded-2xl border-t-4 border-t-purple-500 lg:col-start-2 lg:mr-12">
+                <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-xl mb-4">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <h3 class="text-lg font-semibold text-white mb-2">AI Content Creator</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">Leveraging cutting-edge Artificial Intelligence tools to produce massive, high-quality, and cinematic video contents that hack social media algorithms.</p>
+            </div>
         </div>
-
-        <!-- Kolom Pendidikan -->
-        <div class="space-y-8 relative before:absolute before:left-[19px] before:top-2 before:bottom-2 before:w-[2px] before:bg-zinc-800">
-          <h3 class="text-xl font-bold mb-6 flex items-center gap-3 pl-2">
-            <span class="w-10 h-10 rounded-xl bg-brand-accent/10 border border-brand-accent/20 text-brand-accent flex items-center justify-center text-sm"><i class="fa-solid fa-graduation-cap"></i></span>
-            Pendidikan &amp; Lisensi
-          </h3>
-
-          <!-- Edu 1 -->
-          <div class="relative pl-12 group">
-            <div class="absolute left-4 top-1.5 w-3.5 h-3.5 rounded-full bg-brand-accent ring-4 ring-brand-accent/20 group-hover:bg-brand-500 transition-colors z-10"></div>
-            <div class="p-6 rounded-2xl bg-zinc-900/30 border border-zinc-800/60 hover:border-zinc-700/80 transition-all card-print">
-              <span class="text-xs font-semibold text-brand-accent">2018 - 2022</span>
-              <h4 class="text-lg font-bold text-white mt-1">Sarjana Ilmu Komputer</h4>
-              <p class="text-sm font-medium text-zinc-400">Universitas Teknologi Utama</p>
-              <p class="text-zinc-500 text-sm mt-3 leading-relaxed">
-                Lulus dengan predikat sangat memuaskan (IPK 3.82). Aktif dalam organisasi riset web dan teknologi mahasiswa.
-              </p>
-            </div>
-          </div>
-
-          <!-- Edu 2 -->
-          <div class="relative pl-12 group">
-            <div class="absolute left-4 top-1.5 w-3.5 h-3.5 rounded-full bg-zinc-700 ring-4 ring-zinc-700/20 group-hover:bg-brand-accent transition-colors z-10"></div>
-            <div class="p-6 rounded-2xl bg-zinc-900/30 border border-zinc-800/60 hover:border-zinc-700/80 transition-all card-print">
-              <span class="text-xs font-semibold text-zinc-500">2023</span>
-              <h4 class="text-lg font-bold text-white mt-1">Google UX Design Professional Certificate</h4>
-              <p class="text-sm font-medium text-zinc-400">Coursera Certification</p>
-              <p class="text-zinc-500 text-sm mt-3 leading-relaxed">
-                Kursus intensif berlisensi mencakup riset pengguna, pembuatan wireframe, prototyping, dan pengujian kegunaan (*usability testing*).
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
     </section>
 
-    <section id="portfolio" class="py-16 border-b border-zinc-800/60 print-full-width">
-      <div class="mb-12">
-        <p class="text-sm font-semibold text-brand-500 uppercase tracking-widest">Karya Terbaik</p>
-        <h2 class="text-3xl font-extrabold tracking-tight mt-1 text-white text-gradient">Portofolio Terpilih</h2>
-      </div>
-
-      <!-- Filter Tabs -->
-      <div id="portfolio-filters" class="no-print flex flex-wrap gap-2 mb-8">
-        <button onclick="filterPortfolio('all')" class="portfolio-filter-btn px-5 py-2 rounded-xl text-sm font-medium bg-brand-600 text-white transition-all">Semua</button>
-        <button onclick="filterPortfolio('design')" class="portfolio-filter-btn px-5 py-2 rounded-xl text-sm font-medium bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all">Desain</button>
-        <button onclick="filterPortfolio('web')" class="portfolio-filter-btn px-5 py-2 rounded-xl text-sm font-medium bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all">Pengembangan</button>
-        <button onclick="filterPortfolio('branding')" class="portfolio-filter-btn px-5 py-2 rounded-xl text-sm font-medium bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 transition-all">Branding</button>
-      </div>
-
-      <!-- Portfolio Grid -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
+    <!-- CAREER TIMELINE -->
+    <section class="py-20 px-6 max-w-4xl mx-auto border-t border-gray-800/40" id="experience">
+        <div class="mb-12 text-center">
+            <p class="text-xs font-bold uppercase tracking-widest text-indigo-500 mb-2">Career Evolution</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-white">My Digital Journey</h2>
+        </div>
         
-        <!-- Card 1 -->
-        <div class="portfolio-item design group relative rounded-2xl bg-zinc-900/40 border border-zinc-800/60 overflow-hidden hover:border-zinc-700 transition-all card-print" data-category="design">
-          <div class="h-48 overflow-hidden bg-zinc-950 relative">
-            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600" alt="SaaS Dashboard Design" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
-            <div class="no-print absolute inset-0 bg-brand-500/10 opacity-0 group-hover:opacity-100 transition-all"></div>
-          </div>
-          <div class="p-6">
-            <span class="text-xs font-semibold text-brand-500 uppercase tracking-wider">UI/UX Design</span>
-            <h3 class="text-lg font-bold text-white mt-1 group-hover:text-brand-500 transition-colors">SaaS Analytics Dashboard</h3>
-            <p class="text-zinc-500 text-sm mt-2 leading-relaxed">Mendesain dasbor analitik bisnis yang kompleks menjadi bersih dan intuitif bagi pengguna awam.</p>
-            <div class="no-print mt-4 flex items-center gap-2">
-              <span class="px-2.5 py-1 rounded bg-zinc-800/60 text-zinc-400 text-xs font-medium">Figma</span>
-              <span class="px-2.5 py-1 rounded bg-zinc-800/60 text-zinc-400 text-xs font-medium">Research</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="portfolio-item web group relative rounded-2xl bg-zinc-900/40 border border-zinc-800/60 overflow-hidden hover:border-zinc-700 transition-all card-print" data-category="web">
-          <div class="h-48 overflow-hidden bg-zinc-950 relative">
-            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600" alt="E-Commerce App" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
-            <div class="no-print absolute inset-0 bg-brand-500/10 opacity-0 group-hover:opacity-100 transition-all"></div>
-          </div>
-          <div class="p-6">
-            <span class="text-xs font-semibold text-brand-accent uppercase tracking-wider">Web Development</span>
-            <h3 class="text-lg font-bold text-white mt-1 group-hover:text-brand-accent transition-colors">E-Commerce Web App</h3>
-            <p class="text-zinc-500 text-sm mt-2 leading-relaxed">Membangun frontend aplikasi belanja online cepat saji dengan integrasi gerbang pembayaran lengkap.</p>
-            <div class="no-print mt-4 flex items-center gap-2">
-              <span class="px-2.5 py-1 rounded bg-zinc-800/60 text-zinc-400 text-xs font-medium">ReactJS</span>
-              <span class="px-2.5 py-1 rounded bg-zinc-800/60 text-zinc-400 text-xs font-medium">Tailwind CSS</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="portfolio-item branding group relative rounded-2xl bg-zinc-900/40 border border-zinc-800/60 overflow-hidden hover:border-zinc-700 transition-all card-print" data-category="branding">
-          <div class="h-48 overflow-hidden bg-zinc-950 relative">
-            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600" alt="Logo & Brand Identity" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
-            <div class="no-print absolute inset-0 bg-brand-500/10 opacity-0 group-hover:opacity-100 transition-all"></div>
-          </div>
-          <div class="p-6">
-            <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Branding</span>
-            <h3 class="text-lg font-bold text-white mt-1 group-hover:text-emerald-400 transition-colors">Kopi Senja Identity</h3>
-            <p class="text-zinc-500 text-sm mt-2 leading-relaxed">Membangun identitas visual yang hangat dan estetik untuk waralaba kedai kopi lokal modern.</p>
-            <div class="no-print mt-4 flex items-center gap-2">
-              <span class="px-2.5 py-1 rounded bg-zinc-800/60 text-zinc-400 text-xs font-medium">Illustrator</span>
-              <span class="px-2.5 py-1 rounded bg-zinc-800/60 text-zinc-400 text-xs font-medium">Moodboard</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="skills" class="py-16 border-b border-zinc-800/60 print-full-width">
-      <div class="mb-12">
-        <p class="text-sm font-semibold text-brand-500 uppercase tracking-widest">Kombinasi Skill</p>
-        <h2 class="text-3xl font-extrabold tracking-tight mt-1 text-white text-gradient">Lencana Keahlian</h2>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-10">
-        
-        <!-- Keahlian Teknis -->
-        <div class="space-y-6">
-          <h3 class="text-xl font-bold text-white flex items-center gap-2">
-            <i class="fa-solid fa-code text-brand-500 text-lg"></i> Keahlian Teknis
-          </h3>
-          
-          <div class="space-y-4">
-            <!-- Skill 1 -->
-            <div>
-              <div class="flex justify-between text-sm font-medium mb-1.5">
-                <span class="text-zinc-300">HTML5, CSS3, &amp; Tailwind CSS</span>
-                <span class="text-zinc-400">95%</span>
-              </div>
-              <div class="w-full h-2 rounded-full bg-zinc-800 overflow-hidden">
-                <div class="h-full rounded-full bg-gradient-to-r from-brand-500 to-brand-accent" style="width: 95%"></div>
-              </div>
-            </div>
-            <!-- Skill 2 -->
-            <div>
-              <div class="flex justify-between text-sm font-medium mb-1.5">
-                <span class="text-zinc-300">JavaScript / ReactJS</span>
-                <span class="text-zinc-400">85%</span>
-              </div>
-              <div class="w-full h-2 rounded-full bg-zinc-800 overflow-hidden">
-                <div class="h-full rounded-full bg-gradient-to-r from-brand-500 to-brand-accent" style="width: 85%"></div>
-              </div>
-            </div>
-            <!-- Skill 3 -->
-            <div>
-              <div class="flex justify-between text-sm font-medium mb-1.5">
-                <span class="text-zinc-300">UI/UX Prototype (Figma)</span>
-                <span class="text-zinc-400">90%</span>
-              </div>
-              <div class="w-full h-2 rounded-full bg-zinc-800 overflow-hidden">
-                <div class="h-full rounded-full bg-gradient-to-r from-brand-500 to-brand-accent" style="width: 90%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Lainnya / Soft Skills -->
-        <div class="space-y-6">
-          <h3 class="text-xl font-bold text-white flex items-center gap-2">
-            <i class="fa-solid fa-star text-brand-accent text-lg"></i> Alat &amp; Metodologi
-          </h3>
-          <div class="flex flex-wrap gap-3">
-            <span class="px-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800/80 text-zinc-300 text-sm font-semibold flex items-center gap-2">
-              <i class="fa-brands fa-figma text-orange-400"></i> Figma UI
-            </span>
-            <span class="px-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800/80 text-zinc-300 text-sm font-semibold flex items-center gap-2">
-              <i class="fa-brands fa-git-alt text-orange-600"></i> Git &amp; GitHub
-            </span>
-            <span class="px-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800/80 text-zinc-300 text-sm font-semibold flex items-center gap-2">
-              <i class="fa-brands fa-wordpress text-blue-400"></i> CMS Setup
-            </span>
-            <span class="px-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800/80 text-zinc-300 text-sm font-semibold flex items-center gap-2">
-              <i class="fa-solid fa-gauge-high text-emerald-400"></i> SEO Optimization
-            </span>
-            <span class="px-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800/80 text-zinc-300 text-sm font-semibold flex items-center gap-2">
-              <i class="fa-solid fa-users text-purple-400"></i> Kolaborasi Tim
-            </span>
-            <span class="px-4 py-2 rounded-xl bg-zinc-900 border border-zinc-800/80 text-zinc-300 text-sm font-semibold flex items-center gap-2">
-              <i class="fa-solid fa-brain text-yellow-400"></i> Pemecahan Masalah
-            </span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="contact" class="no-print py-16">
-      <div class="grid lg:grid-cols-5 gap-12 items-start">
-        
-        <div class="lg:col-span-2 space-y-6">
-          <div>
-            <p class="text-sm font-semibold text-brand-500 uppercase tracking-widest">Hubungi Saya</p>
-            <h2 class="text-3xl font-extrabold tracking-tight mt-1 text-white">Mari Mulai Kolaborasi Anda!</h2>
-          </div>
-          <p class="text-zinc-400 leading-relaxed">
-            Punya ide segar, butuh pemecahan masalah, atau sekadar ingin diskusi tentang potensi kerja sama? Kirim pesan sekarang, saya akan merespons dalam 24 jam.
-          </p>
-          
-          <div class="space-y-4 pt-4">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl bg-zinc-900/80 border border-zinc-800 flex items-center justify-center text-brand-500"><i class="fa-solid fa-envelope"></i></div>
-              <div>
-                <div class="text-xs text-zinc-500 font-semibold">Email Resmi</div>
-                <a href="mailto:emailanda@gmail.com" class="text-sm font-bold text-white hover:text-brand-500 transition-colors">emailanda@gmail.com</a>
-              </div>
-            </div>
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl bg-zinc-900/80 border border-zinc-800 flex items-center justify-center text-emerald-500"><i class="fa-brands fa-whatsapp text-lg"></i></div>
-              <div>
-                <div class="text-xs text-zinc-500 font-semibold">WhatsApp</div>
-                <a href="https://wa.me/6281234567890" target="_blank" class="text-sm font-bold text-white hover:text-emerald-500 transition-colors">+62 812-3456-7890</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Formulir Kontak Interaktif -->
-        <div class="lg:col-span-3 p-8 rounded-3xl bg-zinc-900/40 border border-zinc-800/80 backdrop-blur-sm">
-          <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-6">
-            <div class="grid sm:grid-cols-2 gap-6">
-              <div class="space-y-2">
-                <label for="contact-name" class="text-xs font-bold text-zinc-400 uppercase tracking-wider">Nama Anda</label>
-                <input type="text" id="contact-name" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-zinc-950/80 border border-zinc-800 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 text-sm text-zinc-200 transition-all">
-              </div>
-              <div class="space-y-2">
-                <label for="contact-email" class="text-xs font-bold text-zinc-400 uppercase tracking-wider">Alamat Email</label>
-                <input type="email" id="contact-email" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-zinc-950/80 border border-zinc-800 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 text-sm text-zinc-200 transition-all">
-              </div>
-            </div>
-            <div class="space-y-2">
-              <label for="contact-message" class="text-xs font-bold text-zinc-400 uppercase tracking-wider">Detail Pesan</label>
-              <textarea id="contact-message" rows="4" required placeholder="Halo Nama, Saya ingin berdiskusi mengenai proyek..." class="w-full px-4 py-3 rounded-xl bg-zinc-950/80 border border-zinc-800 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 text-sm text-zinc-200 transition-all resize-none"></textarea>
+        <div class="relative border-l border-gray-700 ml-4 md:ml-12 space-y-10">
+            <!-- Era 1 -->
+            <div class="relative pl-8 md:pl-10">
+                <div class="absolute w-4 h-4 bg-gray-600 rounded-full -left-[9px] top-1 border-4 border-[#0b0f19]"></div>
+                <h3 class="text-lg font-bold text-white">Blogging, SEO &amp; AdSense Era</h3>
+                <span class="text-xs font-semibold bg-gray-800 text-gray-300 px-2 py-1 rounded mt-1 inline-block mb-2">Started in 2012</span>
+                <p class="text-sm text-gray-400">Initiated my career in the blogging sphere. Mastered Google SEO to dominate search results, sold products via organic traffic, and successfully monetized websites through Google AdSense.</p>
             </div>
             
-            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 to-brand-accent hover:opacity-95 text-white font-bold transition-all text-center flex items-center justify-center gap-2 shadow-lg shadow-brand-500/20">
-              <i class="fa-solid fa-paper-plane"></i> Kirim Pesan via WhatsApp
-            </button>
-          </form>
+            <!-- Era 2 -->
+            <div class="relative pl-8 md:pl-10">
+                <div class="absolute w-4 h-4 bg-indigo-500 rounded-full -left-[9px] top-1 border-4 border-[#0b0f19]"></div>
+                <h3 class="text-lg font-bold text-white">Marketplace &amp; Web Development</h3>
+                <p class="text-sm text-gray-400 mt-2">Expanded into e-commerce. Built conversion-focused websites and hacked marketplace algorithms to significantly boost store revenues through organic visibility.</p>
+            </div>
+            
+            <!-- Era 3 -->
+            <div class="relative pl-8 md:pl-10">
+                <div class="absolute w-4 h-4 bg-purple-500 rounded-full -left-[9px] top-1 border-4 border-[#0b0f19]"></div>
+                <h3 class="text-lg font-bold text-white">Paid Traffic &amp; Social Media Mastery</h3>
+                <p class="text-sm text-gray-400 mt-2">Entered the scaling phase by managing extensive paid advertising budgets. Executed high-converting campaigns across Facebook Ads, TikTok Ads, and Google Ads.</p>
+            </div>
+            
+            <!-- Era 4 (Current) -->
+            <div class="relative pl-8 md:pl-10">
+                <div class="absolute w-5 h-5 bg-pink-500 rounded-full -left-[11px] top-0 border-4 border-[#0b0f19] shadow-[0_0_15px_rgba(236,72,153,0.6)] animate-pulse"></div>
+                <h3 class="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">AI Video Creator</h3>
+                <span class="text-xs font-bold bg-pink-500/20 text-pink-400 px-2 py-1 rounded mt-1 inline-block mb-2 border border-pink-500/30">Current Focus</span>
+                <p class="text-sm text-gray-400">Embracing the AI revolution. Producing cinematic and highly engaging short-form videos utilizing advanced AI tools to instantly dominate modern content algorithms.</p>
+            </div>
         </div>
-
-      </div>
     </section>
 
-  </main>
+    <!-- PORTFOLIO SECTION -->
+    <section class="py-20 px-6 max-w-6xl mx-auto border-t border-gray-800/40" id="portfolio">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <div>
+                <p class="text-xs font-bold uppercase tracking-widest text-indigo-500 mb-2">Showcase</p>
+                <h2 class="text-2xl md:text-3xl font-bold text-white">Selected Projects</h2>
+            </div>
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap gap-2 text-xs font-medium no-print">
+                <button onclick="filterPortfolio('all')" class="filter-btn bg-indigo-600 text-white px-4 py-2 rounded-lg transition" id="btn-all">All</button>
+                <button onclick="filterPortfolio('web')" class="filter-btn bg-gray-800 hover:bg-gray-700 text-gray-300 px-4 py-2 rounded-lg transition" id="btn-web">Web Design</button>
+                <button onclick="filterPortfolio('ads')" class="filter-btn bg-gray-800 hover:bg-gray-700 text-gray-300 px-4 py-2 rounded-lg transition" id="btn-ads">Ads & Marketplace</button>
+                <button onclick="filterPortfolio('ai')" class="filter-btn bg-gray-800 hover:bg-gray-700 text-gray-300 px-4 py-2 rounded-lg transition" id="btn-ai">AI Video</button>
+            </div>
+        </div>
 
-  <footer class="border-t border-zinc-800/60 bg-zinc-950/50 py-12">
-    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
-      <p class="text-sm text-zinc-500">
-        © 2026 <span class="text-zinc-300">Nama Anda</span>. Hak Cipta Dilindungi.
-      </p>
-      <div class="no-print flex items-center gap-6 text-sm text-zinc-500">
-        <a href="#about" class="hover:text-white transition-colors">Tentang</a>
-        <a href="#portfolio" class="hover:text-white transition-colors">Portofolio</a>
-        <a href="#experience" class="hover:text-white transition-colors">Resume</a>
-      </div>
-    </div>
-  </footer>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Project 1 -->
+            <div class="glass-card rounded-2xl overflow-hidden group portfolio-item" data-category="web">
+                <div class="h-48 bg-gray-800 relative flex items-center justify-center overflow-hidden">
+                    <i class="fa-solid fa-laptop-code text-4xl text-gray-600 group-hover:scale-110 transition duration-300"></i>
+                    <div class="absolute top-3 left-3 bg-blue-500 text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded text-white">Web Design</div>
+                </div>
+                <div class="p-5">
+                    <h4 class="font-bold text-white mb-2">Conversion Landing Page</h4>
+                    <p class="text-xs text-gray-400">Designed and developed a highly responsive landing page focused on UI/UX and lead generation.</p>
+                </div>
+            </div>
 
-  <script>
-    // Logic untuk Pengetikan Otomatis (Typing Effect) di Hero Section
-    const roles = ["UI/UX Designer", "Front-end Developer", "Freelance Creator"];
-    let currentRoleIndex = 0;
-    let currentCharIndex = 0;
-    let isDeleting = false;
-    const typingSpeed = 100;
-    const deletingSpeed = 50;
-    const pauseTime = 2000;
-    const typingElement = document.getElementById("typing-text");
+            <!-- Project 2 -->
+            <div class="glass-card rounded-2xl overflow-hidden group portfolio-item" data-category="ads">
+                <div class="h-48 bg-gray-800 relative flex items-center justify-center overflow-hidden">
+                    <i class="fa-solid fa-chart-line text-4xl text-gray-600 group-hover:scale-110 transition duration-300"></i>
+                    <div class="absolute top-3 left-3 bg-indigo-500 text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded text-white">Paid Traffic</div>
+                </div>
+                <div class="p-5">
+                    <h4 class="font-bold text-white mb-2">ROAS Scaling Campaigns</h4>
+                    <p class="text-xs text-gray-400">Successfully managed ad campaigns across META and TikTok to scale revenue efficiently.</p>
+                </div>
+            </div>
 
-    function typeEffect() {
-      const currentRole = roles[currentRoleIndex];
-      if (isDeleting) {
-        typingElement.textContent = currentRole.substring(0, currentCharIndex - 1);
-        currentCharIndex--;
-      } else {
-        typingElement.textContent = currentRole.substring(0, currentCharIndex + 1);
-        currentCharIndex++;
-      }
+            <!-- Project 3 -->
+            <div class="glass-card rounded-2xl overflow-hidden group portfolio-item" data-category="ai">
+                <div class="h-48 bg-gray-800 relative flex items-center justify-center overflow-hidden">
+                    <i class="fa-solid fa-robot text-4xl text-gray-600 group-hover:scale-110 transition duration-300"></i>
+                    <div class="absolute top-3 left-3 bg-pink-500 text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded text-white">AI Video</div>
+                </div>
+                <div class="p-5">
+                    <h4 class="font-bold text-white mb-2">Automated Viral Reels</h4>
+                    <p class="text-xs text-gray-400">Produced a massive volume of short-form videos utilizing AI prompting to hack social reach.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      if (!isDeleting && currentCharIndex === currentRole.length) {
-        isDeleting = true;
-        setTimeout(typeEffect, pauseTime);
-      } else if (isDeleting && currentCharIndex === 0) {
-        isDeleting = false;
-        currentRoleIndex = (currentRoleIndex + 1) % roles.length;
-        setTimeout(typeEffect, 500);
-      } else {
-        setTimeout(typeEffect, isDeleting ? deletingSpeed : typingSpeed);
-      }
-    }
+    <!-- CONTACT SECTION -->
+    <section class="py-20 px-6 max-w-4xl mx-auto text-center no-print" id="contact">
+        <div class="glass-card p-8 md:p-12 rounded-3xl relative overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-indigo-500/10 rounded-full blur-2xl"></div>
+            <p class="text-xs font-bold uppercase tracking-widest text-indigo-400 mb-2">Let's Collaborate</p>
+            <h2 class="text-2xl md:text-4xl font-bold text-white mb-4">Ready to Scale Your Business?</h2>
+            <p class="text-sm text-gray-400 max-w-md mx-auto mb-8">With over a decade of hands-on experience, let's discuss your web design needs, advertising campaigns, or AI video production.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 text-sm font-medium">
+                <a href="https://wa.me/628993643243" target="_blank" class="w-full sm:w-auto bg-green-600 hover:bg-green-500 text-white px-6 py-3 rounded-xl transition flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i> +62 899-3643-243
+                </a>
+                <a href="mailto:nurulfalah.herbal@gmail.com" class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-xl border border-gray-700 transition flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-envelope"></i> nurulfalah.herbal@gmail.com
+                </a>
+            </div>
+        </div>
+    </section>
 
-    // Memulai efek ketik saat halaman siap
-    document.addEventListener("DOMContentLoaded", () => {
-      typeEffect();
-    });
+    <!-- FOOTER -->
+    <footer class="border-t border-gray-800/40 py-8 px-6 text-center text-xs text-gray-500 no-print">
+        <p>&copy; 2026 Nurul Falah. Digital Marketing Veteran.</p>
+    </footer>
 
-    // Menangani Menu Responsif di HP
-    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
+    <!-- INTERACTIVE SCRIPT -->
+    <script>
+        function filterPortfolio(category) {
+            const items = document.querySelectorAll('.portfolio-item');
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
 
-    mobileMenuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
-
-    function toggleMenu() {
-      mobileMenu.classList.add("hidden");
-    }
-
-    // Logic untuk memfilter Portofolio
-    function filterPortfolio(category) {
-      // Perbarui style tombol filter aktif
-      const filterButtons = document.querySelectorAll(".portfolio-filter-btn");
-      filterButtons.forEach(btn => {
-        btn.classList.remove("bg-brand-600", "text-white");
-        btn.classList.add("bg-zinc-900", "text-zinc-400", "hover:text-white", "hover:bg-zinc-800");
-      });
-
-      // Cari tombol yang aktif
-      const activeButton = Array.from(filterButtons).find(btn => 
-        btn.getAttribute("onclick").includes(`'${category}'`)
-      );
-      if (activeButton) {
-        activeButton.classList.remove("bg-zinc-900", "text-zinc-400", "hover:text-white", "hover:bg-zinc-800");
-        activeButton.classList.add("bg-brand-600", "text-white");
-      }
-
-      // Sembunyikan atau tampilkan item berdasarkan kategori
-      const items = document.querySelectorAll(".portfolio-item");
-      items.forEach(item => {
-        if (category === "all" || item.getAttribute("data-category") === category) {
-          item.style.display = "block";
-        } else {
-          item.style.display = "none";
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-indigo-600', 'text-white');
+                btn.classList.add('bg-gray-800', 'text-gray-300', 'hover:bg-gray-700');
+            });
+            
+            const activeBtn = document.getElementById('btn-' + category);
+            activeBtn.classList.remove('bg-gray-800', 'text-gray-300', 'hover:bg-gray-700');
+            activeBtn.classList.add('bg-indigo-600', 'text-white');
         }
-      });
-    }
-
-    // Mengirim Pesan Form ke WhatsApp
-    function handleContactSubmit(event) {
-      event.preventDefault();
-      
-      const name = document.getElementById("contact-name").value;
-      const email = document.getElementById("contact-email").value;
-      const message = document.getElementById("contact-message").value;
-      
-      // Nomor WA tujuan (Format wajib dengan kode negara tanpa '+', misal 62)
-      const targetPhone = "6281234567890"; 
-      
-      // Susun pesan teks terformat rapi
-      const formatMessage = `Halo Nama Anda,\n\nSaya ingin berkolaborasi!\n\nNama: *${name}*\nEmail: *${email}*\nPesan: "${message}"\n\nDikirim via Website Portofolio.`;
-      
-      const whatsappURL = `https://api.whatsapp.com/send?phone=${targetPhone}&text=${encodeURIComponent(formatMessage)}`;
-      
-      // Buka link chat WA di tab baru
-      window.open(whatsappURL, '_blank');
-    }
-  </script>
+    </script>
 </body>
 </html>
