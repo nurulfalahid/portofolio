@@ -44,10 +44,20 @@
 </head>
 <body class="text-gray-200 min-h-screen selection:bg-indigo-500 selection:text-white">
 
-    <!-- NAVBAR -->
+   <!-- NAVBAR -->
     <header class="fixed top-0 left-0 w-full z-50 bg-[#0b0f19]/80 backdrop-blur-md border-b border-gray-800/60 no-print">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold tracking-tight text-white">Nurul Falah<span class="text-indigo-500">.</span></a>
+            
+            <!-- LOGO DENGAN BENDERA INDONESIA -->
+            <a href="#" class="flex items-center text-xl font-bold tracking-tight text-white group">
+                Nurul Falah<span class="text-indigo-500">.</span>
+                <!-- Ikon Bendera -->
+                <span class="ml-3 flex flex-col w-5 h-[14px] rounded-[3px] overflow-hidden border border-gray-700/80 shadow-sm group-hover:border-gray-500 transition duration-300">
+                    <span class="bg-[#FF0000] h-1/2 w-full"></span>
+                    <span class="bg-white h-1/2 w-full"></span>
+                </span>
+            </a>
+
             <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-400">
                 <a href="#about" class="hover:text-white transition">About</a>
                 <a href="#expertise" class="hover:text-white transition">Expertise</a>
