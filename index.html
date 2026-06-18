@@ -188,117 +188,82 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO SECTION -->
-    <section class="py-20 px-6 max-w-6xl mx-auto border-t border-gray-800/40" id="portfolio">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-            <div>
-                <p class="text-xs font-bold uppercase tracking-widest text-indigo-500 mb-2">Showcase</p>
-                <h2 class="text-2xl md:text-3xl font-bold text-white">Selected Projects</h2>
+    <!-- SELECTED PROJECTS - VIDEO SHOWCASE -->
+<section class="py-20 px-6 max-w-6xl mx-auto" id="portfolio">
+    <div class="mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-white">Selected Projects</h2>
+        <p class="text-gray-400 mt-2 text-sm">A collection of my best work and AI-powered video productions.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Ulangi blok ini sebanyak 6 kali -->
+        <!-- Video 1 -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-gray-800 hover:border-indigo-500 transition-all">
+            <div class="aspect-video w-full">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/njX4iRhCucg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-            <!-- Filter Buttons -->
-            <div class="flex flex-wrap gap-2 text-xs font-medium no-print">
-                <button onclick="filterPortfolio('all')" class="filter-btn bg-indigo-600 text-white px-4 py-2 rounded-lg transition" id="btn-all">All</button>
-                <button onclick="filterPortfolio('ai')" class="filter-btn bg-gray-800 hover:bg-gray-700 text-gray-300 px-4 py-2 rounded-lg transition" id="btn-ai">AI Video</button>
-                <button onclick="filterPortfolio('ads')" class="filter-btn bg-gray-800 hover:bg-gray-700 text-gray-300 px-4 py-2 rounded-lg transition" id="btn-ads">Ads & Marketplace</button>
-                <button onclick="filterPortfolio('web')" class="filter-btn bg-gray-800 hover:bg-gray-700 text-gray-300 px-4 py-2 rounded-lg transition" id="btn-web">Web Design</button>
+            <div class="p-5">
+                <h4 class="font-bold text-white mb-2">Project Showcase 01</h4>
+                <p class="text-xs text-gray-400">Cinematic AI-generated visuals optimized for high engagement.</p>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    
-    <!-- AI VIDEO PROJECTS (Kategori: ai) -->
-    <div class="glass-card rounded-2xl overflow-hidden group portfolio-item" data-category="ai">
-        <div class="h-48 bg-gray-800 relative flex items-center justify-center overflow-hidden">
-            <i class="fa-solid fa-robot text-4xl text-gray-600 group-hover:scale-110 transition duration-300"></i>
-            <div class="absolute top-3 left-3 bg-purple-500 text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded text-white">AI Video</div>
+        <!-- Video 2 -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-gray-800 hover:border-indigo-500 transition-all">
+            <div class="aspect-video w-full">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/njX4iRhCucg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="p-5">
+                <h4 class="font-bold text-white mb-2">Project Showcase 02</h4>
+                <p class="text-xs text-gray-400">Seamless integration of AI avatars for corporate branding.</p>
+            </div>
         </div>
-        <div class="p-5">
-            <h4 class="font-bold text-white mb-2">Viral AI Shorts</h4>
-            <p class="text-xs text-gray-400">Automated short-form content series optimized for TikTok and Reels growth.</p>
+
+        <!-- Video 3 -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-gray-800 hover:border-indigo-500 transition-all">
+            <div class="aspect-video w-full">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/njX4iRhCucg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="p-5">
+                <h4 class="font-bold text-white mb-2">Project Showcase 03</h4>
+                <p class="text-xs text-gray-400">High-converting ad creative produced via AI workflows.</p>
+            </div>
+        </div>
+
+        <!-- Video 4 -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-gray-800 hover:border-indigo-500 transition-all">
+            <div class="aspect-video w-full">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/njX4iRhCucg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="p-5">
+                <h4 class="font-bold text-white mb-2">Project Showcase 04</h4>
+                <p class="text-xs text-gray-400">Niche documentary style long-form video automation.</p>
+            </div>
+        </div>
+
+        <!-- Video 5 -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-gray-800 hover:border-indigo-500 transition-all">
+            <div class="aspect-video w-full">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/njX4iRhCucg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="p-5">
+                <h4 class="font-bold text-white mb-2">Project Showcase 05</h4>
+                <p class="text-xs text-gray-400">Dynamic product animation for marketplace growth.</p>
+            </div>
+        </div>
+
+        <!-- Video 6 -->
+        <div class="glass-card rounded-2xl overflow-hidden border border-gray-800 hover:border-indigo-500 transition-all">
+            <div class="aspect-video w-full">
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/njX4iRhCucg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="p-5">
+                <h4 class="font-bold text-white mb-2">Project Showcase 06</h4>
+                <p class="text-xs text-gray-400">Virtual influencer campaign management and production.</p>
+            </div>
         </div>
     </div>
-
-    <div class="glass-card rounded-2xl overflow-hidden group portfolio-item" data-category="ai">
-        <div class="h-48 bg-gray-800 relative flex items-center justify-center overflow-hidden">
-            <i class="fa-solid fa-film text-4xl text-gray-600 group-hover:scale-110 transition duration-300"></i>
-            <div class="absolute top-3 left-3 bg-purple-500 text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded text-white">AI Video</div>
-        </div>
-        <div class="p-5">
-            <h4 class="font-bold text-white mb-2">Cinematic AI Teaser</h4>
-            <p class="text-xs text-gray-400">High-end narrative film trailer produced using generative AI workflows.</p>
-        </div>
-    </div>
-
-    <!-- ADS & MARKETPLACE PROJECTS (Kategori: ads) -->
-    <div class="glass-card rounded-2xl overflow-hidden group portfolio-item" data-category="ads">
-        <div class="h-48 bg-gray-800 relative flex items-center justify-center overflow-hidden">
-            <i class="fa-solid fa-chart-line text-4xl text-gray-600 group-hover:scale-110 transition duration-300"></i>
-            <div class="absolute top-3 left-3 bg-indigo-500 text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded text-white">Ads & Marketplace</div>
-        </div>
-        <div class="p-5">
-            <h4 class="font-bold text-white mb-2">ROAS Scale Campaign</h4>
-            <p class="text-xs text-gray-400">Meta & TikTok ad creative set that doubled the conversion rate.</p>
-        </div>
-    </div>
-
-    <div class="glass-card rounded-2xl overflow-hidden group portfolio-item" data-category="ads">
-        <div class="h-48 bg-gray-800 relative flex items-center justify-center overflow-hidden">
-            <i class="fa-solid fa-store text-4xl text-gray-600 group-hover:scale-110 transition duration-300"></i>
-            <div class="absolute top-3 left-3 bg-indigo-500 text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded text-white">Ads & Marketplace</div>
-        </div>
-        <div class="p-5">
-            <h4 class="font-bold text-white mb-2">Marketplace Growth</h4>
-            <p class="text-xs text-gray-400">Shopee/TikTok Shop optimization resulting in 300% revenue growth.</p>
-        </div>
-    </div>
-
-    <div class="glass-card rounded-2xl overflow-hidden group portfolio-item" data-category="ads">
-        <div class="h-48 bg-gray-800 relative flex items-center justify-center overflow-hidden">
-            <i class="fa-solid fa-user-check text-4xl text-gray-600 group-hover:scale-110 transition duration-300"></i>
-            <div class="absolute top-3 left-3 bg-indigo-500 text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded text-white">Ads & Marketplace</div>
-        </div>
-        <div class="p-5">
-            <h4 class="font-bold text-white mb-2">AI Spokesperson Ads</h4>
-            <p class="text-xs text-gray-400">Natural-looking AI presenter testimonial used for high-converting ads.</p>
-        </div>
-    </div>
-
-    <!-- WEB DESIGN PROJECTS (Kategori: web) -->
-    <div class="glass-card rounded-2xl overflow-hidden group portfolio-item" data-category="web">
-        <div class="h-48 bg-gray-800 relative flex items-center justify-center overflow-hidden">
-            <i class="fa-solid fa-laptop-code text-4xl text-gray-600 group-hover:scale-110 transition duration-300"></i>
-            <div class="absolute top-3 left-3 bg-blue-500 text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded text-white">Web Design</div>
-        </div>
-        <div class="p-5">
-            <h4 class="font-bold text-white mb-2">High-Conv Landing Page</h4>
-            <p class="text-xs text-gray-400">Conversion-optimized landing page designed for product launches.</p>
-        </div>
-    </div>
-
-    <div class="glass-card rounded-2xl overflow-hidden group portfolio-item" data-category="web">
-        <div class="h-48 bg-gray-800 relative flex items-center justify-center overflow-hidden">
-            <i class="fa-solid fa-blog text-4xl text-gray-600 group-hover:scale-110 transition duration-300"></i>
-            <div class="absolute top-3 left-3 bg-blue-500 text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded text-white">Web Design</div>
-        </div>
-        <div class="p-5">
-            <h4 class="font-bold text-white mb-2">Niche Blog Authority</h4>
-            <p class="text-xs text-gray-400">WordPress site architecture for SEO-led organic traffic dominance.</p>
-        </div>
-    </div>
-
-    <div class="glass-card rounded-2xl overflow-hidden group portfolio-item" data-category="web">
-        <div class="h-48 bg-gray-800 relative flex items-center justify-center overflow-hidden">
-            <i class="fa-solid fa-mobile-screen text-4xl text-gray-600 group-hover:scale-110 transition duration-300"></i>
-            <div class="absolute top-3 left-3 bg-blue-500 text-[10px] uppercase font-bold tracking-wider px-2 py-1 rounded text-white">Web Design</div>
-        </div>
-        <div class="p-5">
-            <h4 class="font-bold text-white mb-2">E-com Web Interface</h4>
-            <p class="text-xs text-gray-400">UI/UX overhaul for a mobile-first e-commerce shopping experience.</p>
-        </div>
-    </div>
-
-</div>    </section>
-
+</section>
     <!-- CONTACT SECTION (FORM TO WHATSAPP) -->
     <section class="py-20 px-6 max-w-6xl mx-auto no-print" id="contact">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
