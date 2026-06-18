@@ -294,22 +294,71 @@
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section class="py-20 px-6 max-w-4xl mx-auto text-center no-print" id="contact">
-        <div class="glass-card p-8 md:p-12 rounded-3xl relative overflow-hidden">
-            <div class="absolute -top-10 -right-10 w-40 h-40 bg-indigo-500/10 rounded-full blur-2xl"></div>
-            <p class="text-xs font-bold uppercase tracking-widest text-indigo-400 mb-2">Let's Collaborate</p>
-            <h2 class="text-2xl md:text-4xl font-bold text-white mb-4">Ready to Scale Your Business?</h2>
-            <p class="text-sm text-gray-400 max-w-md mx-auto mb-8">With over a decade of hands-on experience, let's discuss your web design needs, advertising campaigns, or AI video production.</p>
+    <!-- CONTACT SECTION (FORM TO WHATSAPP) -->
+    <section class="py-20 px-6 max-w-6xl mx-auto no-print" id="contact">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 text-sm font-medium">
-                <a href="https://wa.me/628993643243" target="_blank" class="w-full sm:w-auto bg-green-600 hover:bg-green-500 text-white px-6 py-3 rounded-xl transition flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-base"></i> +62 899-3643-243
-                </a>
-                <a href="mailto:nurulfalah.herbal@gmail.com" class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-xl border border-gray-700 transition flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-envelope"></i> nurulfalah.herbal@gmail.com
-                </a>
+            <!-- Left Side: Text & Contact Cards -->
+            <div>
+                <p class="text-xs font-bold uppercase tracking-widest text-indigo-500 mb-2">Contact Me</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">Let's Start Your Collaboration!</h2>
+                <p class="text-gray-400 text-sm mb-10 leading-relaxed max-w-md">
+                    Have fresh ideas, need problem solving, or just want to discuss potential collaborations? Send a message now, I will respond within 24 hours.
+                </p>
+
+                <div class="space-y-4">
+                    <!-- Email Card -->
+                    <div class="flex items-center gap-4 glass-card p-4 rounded-2xl border border-gray-800/60 w-fit pr-10">
+                        <div class="w-10 h-10 rounded-xl bg-[#0b0f19] border border-gray-700 flex items-center justify-center text-indigo-400">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-gray-500 uppercase tracking-wider font-bold mb-0.5">Official Email</p>
+                            <p class="text-sm font-bold text-white">nurulfalah.herbal@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp Card -->
+                    <div class="flex items-center gap-4 glass-card p-4 rounded-2xl border border-gray-800/60 w-fit pr-10">
+                        <div class="w-10 h-10 rounded-xl bg-[#0b0f19] border border-gray-700 flex items-center justify-center text-green-400">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-gray-500 uppercase tracking-wider font-bold mb-0.5">WhatsApp</p>
+                            <p class="text-sm font-bold text-white">+62 899-3643-243</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <!-- Right Side: Contact Form Box -->
+            <div class="glass-card p-6 md:p-8 rounded-3xl border border-gray-800">
+                <form id="waForm" class="space-y-6" onsubmit="sendToWhatsApp(event)">
+                    <!-- Row: Name & Email -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Your Name</label>
+                            <input type="text" id="waName" required class="w-full bg-[#0b0f19] border border-gray-800 text-white text-sm rounded-xl px-4 py-3.5 focus:outline-none focus:border-indigo-500 transition" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Email Address</label>
+                            <input type="email" id="waEmail" class="w-full bg-[#0b0f19] border border-gray-800 text-white text-sm rounded-xl px-4 py-3.5 focus:outline-none focus:border-indigo-500 transition" placeholder="john@example.com">
+                        </div>
+                    </div>
+                    
+                    <!-- Row: Message Details -->
+                    <div>
+                        <label class="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2">Message Details</label>
+                        <textarea id="waMessage" required rows="4" class="w-full bg-[#0b0f19] border border-gray-800 text-white text-sm rounded-xl px-4 py-3.5 focus:outline-none focus:border-indigo-500 transition resize-none" placeholder="Tell me about your project..."></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-bold py-4 rounded-xl flex justify-center items-center gap-2 hover:opacity-90 hover:scale-[1.02] transition-all duration-300">
+                        <i class="fa-solid fa-paper-plane"></i> Send Message via WhatsApp
+                    </button>
+                </form>
+            </div>
+
         </div>
     </section>
 
@@ -320,6 +369,29 @@
 
     <!-- INTERACTIVE SCRIPT -->
     <script>
+        // FUNGSI KIRIM PESAN KE WHATSAPP
+        function sendToWhatsApp(event) {
+            event.preventDefault(); // Mencegah halaman ter-refresh
+            
+            // Mengambil data dari input form
+            const name = document.getElementById('waName').value;
+            const email = document.getElementById('waEmail').value;
+            const message = document.getElementById('waMessage').value;
+            
+            // Nomor WhatsApp Anda
+            const phoneNumber = "628993643243";
+            
+            // Merakit format teks pesan untuk dikirim ke WA
+            let waText = `Hello Nurul Falah,%0A%0AMy name is *${name}*.%0A`;
+            if(email) {
+                waText += `Email: ${email}%0A`;
+            }
+            waText += `%0AI would like to discuss:%0A${message}`;
+            
+            // Membuka tab baru langsung ke aplikasi/web WhatsApp
+            const waURL = `https://wa.me/${phoneNumber}?text=${waText}`;
+            window.open(waURL, '_blank');
+        }
         function filterPortfolio(category) {
             const items = document.querySelectorAll('.portfolio-item');
             items.forEach(item => {
